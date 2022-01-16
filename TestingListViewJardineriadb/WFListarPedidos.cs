@@ -19,8 +19,13 @@ namespace TestingListViewJardineriadb
 
         private void WFListarPedidos_Load(object sender, EventArgs e)
         {
-            lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            limpiar();
+            //lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            //lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            btnListar.Focus();
+            lstPedidos.MultiSelect = true;
+           
+            
           
         }
 
@@ -48,8 +53,8 @@ namespace TestingListViewJardineriadb
 
         private void lstPedidos_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            
-            if (e.Column==codigoproducto.Index)
+
+            if (e.Column == codigoproducto.Index)
             {
 
                 limpiar();
@@ -176,6 +181,67 @@ namespace TestingListViewJardineriadb
 
         }
 
+        private void seleccionarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstPedidos.SelectedItems.Count > 0)
+            {
+                var valor = lstPedidos.SelectedItems[0];
+                //MessageBox.Show(valor);
+            }
 
+        }
+
+
+
+        private void lstPedidos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+      
+            //if (lstPedidos.SelectedItems.Count > 0)
+            //{
+
+            //    lstPedidos.SelectedItems[0].BackColor = System.Drawing.Color.Blue;
+            //}
+            //foreach (ListViewItem item in lstPedidos.Items)
+            //    item.BackColor = Color.LightSteelBlue;
+
+        }
+
+        private void lstPedidos_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            //if (e.IsSelected)
+            //{
+            //    e.Item.BackColor = SystemColors.Highlight;
+            //    e.Item.ForeColor = SystemColors.HighlightText;
+            //}
+            //else
+            //{
+            //    e.Item.BackColor = BackColor;
+            //    e.Item.ForeColor = ForeColor;
+            //}
+        }
+
+        private void WFListarPedidos_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void lstPedidos_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                var scodigoproducto = lstPedidos.SelectedItems[0].SubItems[codigoproducto.Index].Text;
+                if (scodigoproducto != "11679")
+                {
+                    cntMenu.Items[0].Visible = false;
+                   
+                }
+                else 
+                {
+                    cntMenu.Items[0].Visible = true;
+                }
+               
+
+            }
+        }
     }
 }
