@@ -51,10 +51,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="GroupListView.cs" />
     <Compile Include="DTPedido.cs" />
     <Compile Include="PPedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WFDataGridPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFDataGridPedidos.Designer.cs">
+      <DependentUpon>WFDataGridPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="WFListarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WFDataGridPedidos.resx">
+      <DependentUpon>WFDataGridPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WFListarPedidos.resx">
       <DependentUpon>WFListarPedidos.cs</DependentUpon>
     </EmbeddedResource>

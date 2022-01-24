@@ -40,7 +40,7 @@ namespace TestingListViewJardineriadb
 
             var listViewItem = new ListViewItem(dtp.CodigoPedido.ToString());
            
-            
+     
             listViewItem.SubItems.Add(dtp.CodigoProducto.ToString());
             listViewItem.SubItems.Add(dtp.Cantidad.ToString());
             listViewItem.SubItems.Add(dtp.PrecioUnidad.ToString());
@@ -65,18 +65,26 @@ namespace TestingListViewJardineriadb
         }
         private void listarDetallePedidos()
         {
-            List<DTPedido> listpedido = PPedido.listarDetallePedidos();
-            foreach (DTPedido dTPedido in listpedido)
-            {
-                AgregarLinea(dTPedido);
-            }
+            //List<DTPedido> listpedido = PPedido.listarDetallePedidos();
+            //foreach (DTPedido dTPedido in listpedido)
+            //{
+            //    AgregarLinea(dTPedido);
+            //}
+            //List<DTPedido> listpedido = PPedido.buscarPorProducto("11679");
+            //foreach (DTPedido dTPedido in listpedido)
+            //{
+            //    AgregarLinea(dTPedido);
+            //}
+            GroupListView.GruposListView.GrupoPorCodigoProducto();
+
         }
         private void listarDetallePedidosOrderProducto()
         {
-
+       
             decimal totalpreciounidad = 0;
             decimal totaltotales = 0;
             List<DTPedido> listpedido = PPedido.listarDetallePedidosOrdenadosProducto();
+            
             for (int i = 1; i <= listpedido.Count-1; i++)
             {
                 AgregarLinea(listpedido[i-1]);

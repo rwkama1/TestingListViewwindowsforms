@@ -40,6 +40,7 @@ namespace TestingListViewJardineriadb
             this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.countproduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cntMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace TestingListViewJardineriadb
             this.codigoproducto,
             this.cantidad,
             this.preciounidad,
-            this.numerolinea});
+            this.numerolinea,
+            this.countproduct});
             this.lstPedidos.FullRowSelect = true;
             this.lstPedidos.HideSelection = false;
             this.lstPedidos.Location = new System.Drawing.Point(12, 57);
@@ -108,12 +110,12 @@ namespace TestingListViewJardineriadb
             this.cntMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.seleccionarPedidoToolStripMenuItem});
             this.cntMenu.Name = "cntMenu";
-            this.cntMenu.Size = new System.Drawing.Size(181, 48);
+            this.cntMenu.Size = new System.Drawing.Size(175, 26);
             // 
             // seleccionarPedidoToolStripMenuItem
             // 
             this.seleccionarPedidoToolStripMenuItem.Name = "seleccionarPedidoToolStripMenuItem";
-            this.seleccionarPedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seleccionarPedidoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.seleccionarPedidoToolStripMenuItem.Text = "Seleccionar Pedido";
             this.seleccionarPedidoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarPedidoToolStripMenuItem_Click);
             // 
@@ -125,6 +127,10 @@ namespace TestingListViewJardineriadb
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // countproduct
+            // 
+            this.countproduct.Text = "Count Producto";
             // 
             // WFListarPedidos
             // 
@@ -158,5 +164,6 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.ContextMenuStrip cntMenu;
         private System.Windows.Forms.ToolStripMenuItem seleccionarPedidoToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader countproduct;
     }
 }
