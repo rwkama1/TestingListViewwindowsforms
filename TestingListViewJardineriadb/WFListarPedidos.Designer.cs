@@ -40,7 +40,7 @@ namespace TestingListViewJardineriadb
             this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.countproduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colvacia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cntMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,17 +50,17 @@ namespace TestingListViewJardineriadb
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstPedidos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colvacia,
             this.codigopedido,
             this.codigoproducto,
             this.cantidad,
             this.preciounidad,
-            this.numerolinea,
-            this.countproduct});
+            this.numerolinea});
             this.lstPedidos.FullRowSelect = true;
             this.lstPedidos.HideSelection = false;
             this.lstPedidos.Location = new System.Drawing.Point(12, 57);
             this.lstPedidos.Name = "lstPedidos";
-            this.lstPedidos.Size = new System.Drawing.Size(764, 340);
+            this.lstPedidos.Size = new System.Drawing.Size(822, 340);
             this.lstPedidos.TabIndex = 1;
             this.lstPedidos.UseCompatibleStateImageBehavior = false;
             this.lstPedidos.View = System.Windows.Forms.View.Details;
@@ -72,32 +72,36 @@ namespace TestingListViewJardineriadb
             // codigopedido
             // 
             this.codigopedido.Text = "Codigo Pedido";
-            this.codigopedido.Width = 100;
+            this.codigopedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.codigopedido.Width = 150;
             // 
             // codigoproducto
             // 
             this.codigoproducto.Text = "Codigo Producto";
-            this.codigoproducto.Width = 100;
+            this.codigoproducto.Width = 150;
             // 
             // cantidad
             // 
             this.cantidad.Text = "Cantidad";
-            this.cantidad.Width = 100;
+            this.cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cantidad.Width = 150;
             // 
             // preciounidad
             // 
             this.preciounidad.Text = "Precio Unidad";
-            this.preciounidad.Width = 100;
+            this.preciounidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.preciounidad.Width = 140;
             // 
             // numerolinea
             // 
             this.numerolinea.Text = "Numero Linea";
-            this.numerolinea.Width = 100;
+            this.numerolinea.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numerolinea.Width = 120;
             // 
             // btnListar
             // 
             this.btnListar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnListar.Location = new System.Drawing.Point(701, 28);
+            this.btnListar.Location = new System.Drawing.Point(759, 28);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 0;
@@ -121,22 +125,23 @@ namespace TestingListViewJardineriadb
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 417);
+            this.button1.Location = new System.Drawing.Point(759, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // countproduct
+            // colvacia
             // 
-            this.countproduct.Text = "Count Producto";
+            this.colvacia.Text = "";
+            this.colvacia.Width = 0;
             // 
             // WFListarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 452);
+            this.ClientSize = new System.Drawing.Size(858, 452);
             this.ContextMenuStrip = this.cntMenu;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnListar);
@@ -164,6 +169,6 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.ContextMenuStrip cntMenu;
         private System.Windows.Forms.ToolStripMenuItem seleccionarPedidoToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ColumnHeader countproduct;
+        private System.Windows.Forms.ColumnHeader colvacia;
     }
 }

@@ -89,7 +89,7 @@ namespace TestingListViewJardineriadb
 
         internal static List<DTPedido> buscarPorProducto(string codigoproducto)
         {
-            string consulta = $"select * from detalle_pedido where codigo_producto={codigoproducto}";
+            string consulta = $"select * from detalle_pedido where codigo_producto='{codigoproducto}'";
             MySqlConnection cnn = Conexion.conexion();
             MySqlCommand comand = new MySqlCommand(consulta, cnn);
             List<DTPedido> listp = new List<DTPedido>();

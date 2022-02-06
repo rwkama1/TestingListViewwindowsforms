@@ -32,7 +32,7 @@ namespace TestingListViewJardineriadb
         private void btnListar_Click(object sender, EventArgs e)
         {
             limpiar();
-            listarDetallePedidos();       
+            GroupListView.GruposListView.GrupoPorCodigoProducto(lstPedidos);   
         }
         private void AgregarLinea(DTPedido dtp)
         {
@@ -75,7 +75,7 @@ namespace TestingListViewJardineriadb
             //{
             //    AgregarLinea(dTPedido);
             //}
-            GroupListView.GruposListView.GrupoPorCodigoProducto();
+           /// GroupListView.GruposListView.GrupoPorCodigoProducto();
 
         }
         private void listarDetallePedidosOrderProducto()
