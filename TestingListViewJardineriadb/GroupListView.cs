@@ -42,21 +42,6 @@ namespace TestingListViewJardineriadb.GroupListView
             }
             return listadellistview;
         }
-        //internal static DTPedido BuscarEnProductosCount(string codigo)
-        //{
-
-        //    DTPedido objpedido = null;
-
-        //    var pedidosproductoscount = PPedido.listarPorProductoCount();
-        //    foreach (var item in pedidosproductoscount)
-        //    {
-        //        if(item.CodigoProducto==codigo)
-        //        {
-        //            objpedido = item;
-        //        }
-        //    }
-        //    return objpedido;
-        //}
-      
+     
     }
 }
