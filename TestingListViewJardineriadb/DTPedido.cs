@@ -17,11 +17,11 @@ namespace TestingListViewJardineriadb
         public short NumeroLinea { get; set; }
         public DTPedido(int codigoPedido, int cantidad, string codigoProducto, decimal precioUnidad, short numeroLinea)
         {
-            CodigoPedido = codigoPedido;
-            Cantidad = cantidad;
-            CodigoProducto = codigoProducto;
-            PrecioUnidad = precioUnidad;
-            NumeroLinea = numeroLinea;
+            //CodigoPedido = codigoPedido;
+            //Cantidad = cantidad;
+            //CodigoProducto = codigoProducto;
+            //PrecioUnidad = precioUnidad;
+            //NumeroLinea = numeroLinea;
         }
         public DTPedido()
         {
