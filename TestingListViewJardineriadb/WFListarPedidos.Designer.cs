@@ -31,6 +31,7 @@ namespace TestingListViewJardineriadb
         {
             this.components = new System.ComponentModel.Container();
             this.lstPedidos = new System.Windows.Forms.ListView();
+            this.colvacia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.codigopedido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.codigoproducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,7 +41,6 @@ namespace TestingListViewJardineriadb
             this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.colvacia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cntMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,11 +69,16 @@ namespace TestingListViewJardineriadb
             this.lstPedidos.SelectedIndexChanged += new System.EventHandler(this.lstPedidos_SelectedIndexChanged);
             this.lstPedidos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstPedidos_MouseClick);
             // 
+            // colvacia
+            // 
+            this.colvacia.Text = "";
+            this.colvacia.Width = 0;
+            // 
             // codigopedido
             // 
             this.codigopedido.Text = "Codigo Pedido";
             this.codigopedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.codigopedido.Width = 150;
+            this.codigopedido.Width = 110;
             // 
             // codigoproducto
             // 
@@ -90,7 +95,7 @@ namespace TestingListViewJardineriadb
             // 
             this.preciounidad.Text = "Precio Unidad";
             this.preciounidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.preciounidad.Width = 140;
+            this.preciounidad.Width = 130;
             // 
             // numerolinea
             // 
@@ -131,11 +136,6 @@ namespace TestingListViewJardineriadb
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // colvacia
-            // 
-            this.colvacia.Text = "";
-            this.colvacia.Width = 0;
             // 
             // WFListarPedidos
             // 

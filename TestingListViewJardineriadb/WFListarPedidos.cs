@@ -23,7 +23,7 @@ namespace TestingListViewJardineriadb
             //lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             //lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             btnListar.Focus();
-            lstPedidos.MultiSelect = true;
+            lstPedidos.MultiSelect = false;
            
             
           
@@ -32,7 +32,8 @@ namespace TestingListViewJardineriadb
         private void btnListar_Click(object sender, EventArgs e)
         {
             limpiar();
-            GroupListView.GruposListView.GrupoPorCodigoProducto(lstPedidos);   
+            GroupListView.GruposListView.GrupoPorCodigoProducto(lstPedidos,codigopedido,
+                codigoproducto,cantidad,numerolinea,preciounidad);   
         }
         private void AgregarLinea(DTPedido dtp)
         {
@@ -184,8 +185,7 @@ namespace TestingListViewJardineriadb
         private void limpiar()
         {
             lstPedidos.Items.Clear();
-            lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
 
         }
 
