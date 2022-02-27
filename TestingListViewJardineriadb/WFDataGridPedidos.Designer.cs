@@ -29,7 +29,7 @@ namespace TestingListViewJardineriadb
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.colproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colenvase = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,8 @@ namespace TestingListViewJardineriadb
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnModifcar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnModificarDatos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFiltro1.SuspendLayout();
             this.grpFiltro2.SuspendLayout();
@@ -67,10 +68,12 @@ namespace TestingListViewJardineriadb
             this.colprecio,
             this.colimporte});
             this.dgvProductos.Location = new System.Drawing.Point(12, 163);
+            this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.Size = new System.Drawing.Size(896, 310);
             this.dgvProductos.TabIndex = 4;
+            this.dgvProductos.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvProductos_CellValidating);
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
             // colproducto
@@ -93,9 +96,9 @@ namespace TestingListViewJardineriadb
             // 
             // colcant
             // 
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colcant.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colcant.DefaultCellStyle = dataGridViewCellStyle2;
             this.colcant.HeaderText = "Cantidad";
             this.colcant.Name = "colcant";
             // 
@@ -203,22 +206,32 @@ namespace TestingListViewJardineriadb
             this.label2.TabIndex = 7;
             this.label2.Text = "label2";
             // 
-            // btnModifcar
+            // btnListar
             // 
-            this.btnModifcar.Location = new System.Drawing.Point(725, 508);
-            this.btnModifcar.Name = "btnModifcar";
-            this.btnModifcar.Size = new System.Drawing.Size(75, 23);
-            this.btnModifcar.TabIndex = 8;
-            this.btnModifcar.Text = "Modificar";
-            this.btnModifcar.UseVisualStyleBackColor = true;
-            this.btnModifcar.Click += new System.EventHandler(this.btnModifcar_Click);
+            this.btnListar.Location = new System.Drawing.Point(621, 508);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 8;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnModifcar_Click);
+            // 
+            // btnModificarDatos
+            // 
+            this.btnModificarDatos.Location = new System.Drawing.Point(711, 508);
+            this.btnModificarDatos.Name = "btnModificarDatos";
+            this.btnModificarDatos.Size = new System.Drawing.Size(103, 23);
+            this.btnModificarDatos.TabIndex = 9;
+            this.btnModificarDatos.Text = "Modificar Datos";
+            this.btnModificarDatos.UseVisualStyleBackColor = true;
             // 
             // WFDataGridPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 534);
-            this.Controls.Add(this.btnModifcar);
+            this.Controls.Add(this.btnModificarDatos);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar);
@@ -263,6 +276,7 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.DataGridViewTextBoxColumn colimporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnModifcar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnModificarDatos;
     }
 }
