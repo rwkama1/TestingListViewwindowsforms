@@ -29,14 +29,8 @@ namespace TestingListViewJardineriadb
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.colproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colenvase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colcodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colcant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colprecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colimporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltro1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.grpFiltro2 = new System.Windows.Forms.GroupBox();
@@ -50,6 +44,12 @@ namespace TestingListViewJardineriadb
             this.btnListar = new System.Windows.Forms.Button();
             this.btnModificarDatos = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.colproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colenvase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colcodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colcant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colprecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colimporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFiltro1.SuspendLayout();
             this.grpFiltro2.SuspendLayout();
@@ -77,42 +77,6 @@ namespace TestingListViewJardineriadb
             this.dgvProductos.TabIndex = 4;
             this.dgvProductos.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvProductos_CellValidating);
             this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
-            // 
-            // colproducto
-            // 
-            this.colproducto.HeaderText = "Producto";
-            this.colproducto.Name = "colproducto";
-            this.colproducto.ReadOnly = true;
-            // 
-            // colenvase
-            // 
-            this.colenvase.HeaderText = "Envase";
-            this.colenvase.Name = "colenvase";
-            this.colenvase.ReadOnly = true;
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.HeaderText = "Codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.ReadOnly = true;
-            // 
-            // colcant
-            // 
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colcant.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colcant.HeaderText = "Cantidad";
-            this.colcant.Name = "colcant";
-            // 
-            // colprecio
-            // 
-            this.colprecio.HeaderText = "Precio";
-            this.colprecio.Name = "colprecio";
-            // 
-            // colimporte
-            // 
-            this.colimporte.HeaderText = "Importe";
-            this.colimporte.Name = "colimporte";
             // 
             // grpFiltro1
             // 
@@ -186,7 +150,7 @@ namespace TestingListViewJardineriadb
             this.btnAgregar.Location = new System.Drawing.Point(833, 508);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -214,7 +178,7 @@ namespace TestingListViewJardineriadb
             this.btnListar.Location = new System.Drawing.Point(621, 508);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
-            this.btnListar.TabIndex = 8;
+            this.btnListar.TabIndex = 5;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnModifcar_Click);
@@ -224,7 +188,7 @@ namespace TestingListViewJardineriadb
             this.btnModificarDatos.Location = new System.Drawing.Point(711, 508);
             this.btnModificarDatos.Name = "btnModificarDatos";
             this.btnModificarDatos.Size = new System.Drawing.Size(103, 23);
-            this.btnModificarDatos.TabIndex = 9;
+            this.btnModificarDatos.TabIndex = 6;
             this.btnModificarDatos.Text = "Modificar Datos";
             this.btnModificarDatos.UseVisualStyleBackColor = true;
             // 
@@ -235,6 +199,43 @@ namespace TestingListViewJardineriadb
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
+            // 
+            // colproducto
+            // 
+            this.colproducto.HeaderText = "Producto";
+            this.colproducto.Name = "colproducto";
+            this.colproducto.ReadOnly = true;
+            // 
+            // colenvase
+            // 
+            this.colenvase.HeaderText = "Envase";
+            this.colenvase.Name = "colenvase";
+            this.colenvase.ReadOnly = true;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.HeaderText = "Codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.ReadOnly = true;
+            // 
+            // colcant
+            // 
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colcant.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colcant.HeaderText = "Cantidad";
+            this.colcant.Name = "colcant";
+            // 
+            // colprecio
+            // 
+            this.colprecio.HeaderText = "Precio";
+            this.colprecio.Name = "colprecio";
+            // 
+            // colimporte
+            // 
+            this.colimporte.HeaderText = "Importe";
+            this.colimporte.Name = "colimporte";
+            this.colimporte.ReadOnly = true;
             // 
             // WFDataGridPedidos
             // 
@@ -280,16 +281,16 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnModificarDatos;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colproducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colenvase;
         private System.Windows.Forms.DataGridViewTextBoxColumn colcodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colcant;
         private System.Windows.Forms.DataGridViewTextBoxColumn colprecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colimporte;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnModificarDatos;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
