@@ -1,8 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,7 +109,7 @@ namespace TestingListViewJardineriadb
                 
                         var listViewItem = new ListViewItem("");
                         listViewItem.UseItemStyleForSubItems = false;
-                        Font fontstyle = new Font(Font, FontStyle.Bold);
+                        System.Drawing.Font fontstyle = new System.Drawing.Font(Font, FontStyle.Bold);
                         listViewItem.SubItems.Add("");
                         listViewItem.SubItems.Add("");
                         listViewItem.SubItems.Add("");
@@ -139,19 +142,19 @@ namespace TestingListViewJardineriadb
                     {
 
                         var listViewItem = new ListViewItem("");
-                        listViewItem.UseItemStyleForSubItems = false;
-                        Font fontstyle = new Font(Font, FontStyle.Bold);
+                       // listViewItem.UseItemStyleForSubItems = false;
+                        //System.Drawing.Font fontstyle = new System.Drawing.Font(Font, FontStyle.Bold);
                         listViewItem.SubItems.Add("");
                         listViewItem.SubItems.Add("");
                         listViewItem.SubItems.Add("");
                         listViewItem.SubItems.Add("");
                         listViewItem.SubItems.Add("");
 
-                        listViewItem.SubItems[codigopedido.Index].Font = fontstyle;
-                        listViewItem.SubItems[codigoproducto.Index].Font = fontstyle;
-                        listViewItem.SubItems[cantidad.Index].Font = fontstyle;
-                        listViewItem.SubItems[numerolinea.Index].Font = fontstyle;
-                        listViewItem.SubItems[preciounidad.Index].Font = fontstyle;
+                        //listViewItem.SubItems[codigopedido.Index].Font = fontstyle;
+                        //listViewItem.SubItems[codigoproducto.Index].Font = fontstyle;
+                        //listViewItem.SubItems[cantidad.Index].Font = fontstyle;
+                        //listViewItem.SubItems[numerolinea.Index].Font = fontstyle;
+                        //listViewItem.SubItems[preciounidad.Index].Font = fontstyle;
                         totaltotales = totaltotales + totalpreciounidad;
                         listViewItem.SubItems[preciounidad.Index].Text = totalpreciounidad.ToString();
 
@@ -162,19 +165,19 @@ namespace TestingListViewJardineriadb
                 }
             }
             var listViewItem2 = new ListViewItem("");
-            listViewItem2.UseItemStyleForSubItems = false;
-            Font fontstyle2 = new Font(Font, FontStyle.Bold);
+           // listViewItem2.UseItemStyleForSubItems = false;
+            //System.Drawing.Font fontstyle2 = new System.Drawing.Font(Font, FontStyle.Bold);
             listViewItem2.SubItems.Add("");
             listViewItem2.SubItems.Add("");
             listViewItem2.SubItems.Add("");
             listViewItem2.SubItems.Add("");
             listViewItem2.SubItems.Add("");
 
-            listViewItem2.SubItems[codigopedido.Index].Font = fontstyle2;
-            listViewItem2.SubItems[codigoproducto.Index].Font = fontstyle2;
-            listViewItem2.SubItems[cantidad.Index].Font = fontstyle2;
-            listViewItem2.SubItems[numerolinea.Index].Font = fontstyle2;
-            listViewItem2.SubItems[preciounidad.Index].Font = fontstyle2;
+            //listViewItem2.SubItems[codigopedido.Index].Font = fontstyle2;
+            //listViewItem2.SubItems[codigoproducto.Index].Font = fontstyle2;
+            //listViewItem2.SubItems[cantidad.Index].Font = fontstyle2;
+            //listViewItem2.SubItems[numerolinea.Index].Font = fontstyle2;
+            //listViewItem2.SubItems[preciounidad.Index].Font = fontstyle2;
             listViewItem2.SubItems[preciounidad.Index].Text = totaltotales.ToString();
 
 
@@ -194,11 +197,108 @@ namespace TestingListViewJardineriadb
             if (lstPedidos.SelectedItems.Count > 0)
             {
                 var valor = lstPedidos.SelectedItems[0];
+
+                GenerarPdf();
+                //var valor2= lstPedidos.Sele
+
+
+
+
+
                 //MessageBox.Show(valor);
             }
 
         }
+        private void GenerarPdf()
+        {
+            if (lstPedidos.Items.Count > 0)
+            {
+                Document doc = new Document();
+                PdfWriter.GetInstance(doc, new FileStream("C:/Users/Waldemar/Desktop/Cosas Programacion/asd.pdf", FileMode.Create));
+                doc.Open();
+                Paragraph p1 = new Paragraph("hello world");
+                doc.Add(p1);
+                doc.Close();
+                MessageBox.Show("PDF file created");
+                //SaveFileDialog sfd = new SaveFileDialog();
+                //sfd.Filter = "PDF (*.pdf)|*.pdf";
+                //sfd.FileName = "Output.pdf";
+                //bool fileError = false;
+                //if (sfd.ShowDialog() == DialogResult.OK)
+                //{
+                //    if (File.Exists(sfd.FileName))
+                //    {
+                //        try
+                //        {
+                //            File.Delete(sfd.FileName);
+                //        }
+                //        catch (IOException ex)
+                //        {
+                //            fileError = true;
+                //            MessageBox.Show("It wasn't possible to write the data to the disk." + ex.Message);
+                //        }
+                //    }
+                //    if (!fileError)
+                //    {
+                //        //try
+                //        //{
+                //            PdfPTable pdfTable = new PdfPTable(lstPedidos.Columns.Count);
+                //            pdfTable.DefaultCell.Padding = 3;
+                //            pdfTable.WidthPercentage = 100;
+                //            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                //            pdfTable.DefaultCell.BorderWidth = 1;
+                //            foreach (ColumnHeader column in lstPedidos.Columns)
+                //            {
+                //                PdfPCell cell = new PdfPCell(new Phrase(column.Text));
+                //                pdfTable.AddCell(cell);
+                //            }
+                            
+                //            for (int i = 0; i < lstPedidos.Items.Count; i++)
+                //            {
+                //                ListViewItem listviewitem = lstPedidos.Items[i];
 
+                //                for (int i1 = 0; i1 < listviewitem.SubItems.Count; i1++)
+                //                {
+                //                    var item = listviewitem.SubItems[i1];
+                //                    //if(item!=null)
+                //                    //{
+                //                        PdfPCell pdfPCell = new PdfPCell(new Phrase(item.Text));
+                //                        pdfTable.AddCell(pdfPCell);
+                //                    //}
+                                   
+                //                }
+                //            }
+                //            string folderPath = @"C:\Users\Waldemar\Desktop";
+                //            if (!Directory.Exists(folderPath))
+                //            {
+                //                Directory.CreateDirectory(folderPath);
+                //            }
+                              
+                            
+                //               iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                //            FileStream stream = new FileStream(sfd.FileName, FileMode.Create);
+                       
+                //        var writer =PdfWriter.GetInstance(pdfDoc, stream);
+                //        writer.CloseStream = false;
+                //        pdfDoc.Open();
+                //        pdfDoc.Add(pdfTable);
+                //                pdfDoc.Close();
+                //                stream.Close();
+                            
+                //            MessageBox.Show("Data Exported Successfully !!!", "Info");
+                //        //}
+                //        //catch (Exception ex)
+                //        //{
+                //        //    MessageBox.Show("Error :" + ex.Message);
+                //        //}
+                //    }
+                //}
+            }
+            else
+            {
+                MessageBox.Show("No Record To Export !!!", "Info");
+            }
+        }
 
 
         private void lstPedidos_SelectedIndexChanged(object sender, EventArgs e)

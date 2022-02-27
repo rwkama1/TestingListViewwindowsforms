@@ -31,21 +31,21 @@ namespace TestingListViewJardineriadb.GroupListView
                     lst.Items.Add(listViewItem);
                 }
                
-                Font fontstyle2 = new Font(lst.Font, FontStyle.Bold);
-                var listViewItemtotal = new ListViewItem("");
-                listViewItemtotal.UseItemStyleForSubItems = false;
-                listViewItemtotal.SubItems.Add("");
-                listViewItemtotal.SubItems.Add("TOTAL");
-                listViewItemtotal.SubItems.Add("");
-                listViewItemtotal.SubItems.Add(CalcularTotalLista(buscaporproducto).ToString());
-                listViewItemtotal.SubItems.Add("");
-                buscaporproducto = null;
-                listViewItemtotal.SubItems[colpedido.Index].Font = fontstyle2;
-                listViewItemtotal.SubItems[colproducto.Index].Font = fontstyle2;
-                listViewItemtotal.SubItems[colcantidad.Index].Font = fontstyle2;
-                listViewItemtotal.SubItems[colnumerolinea.Index].Font = fontstyle2;
-                listViewItemtotal.SubItems[colprice.Index].Font = fontstyle2;
-                lst.Items.Add(listViewItemtotal);
+                //Font fontstyle2 = new Font(lst.Font, FontStyle.Bold);
+                //var listViewItemtotal = new ListViewItem("");
+                ////listViewItemtotal.UseItemStyleForSubItems = false;
+                //listViewItemtotal.SubItems.Add("");
+                //listViewItemtotal.SubItems.Add("");
+                //listViewItemtotal.SubItems.Add("");
+                //listViewItemtotal.SubItems.Add(CalcularTotalLista(buscaporproducto).ToString());
+                //listViewItemtotal.SubItems.Add("");
+                //buscaporproducto = null;
+                //listViewItemtotal.SubItems[colpedido.Index].Font = fontstyle2;
+                //listViewItemtotal.SubItems[colproducto.Index].Font = fontstyle2;
+                //listViewItemtotal.SubItems[colcantidad.Index].Font = fontstyle2;
+                //listViewItemtotal.SubItems[colnumerolinea.Index].Font = fontstyle2;
+                //listViewItemtotal.SubItems[colprice.Index].Font = fontstyle2;
+                //lst.Items.Add(listViewItemtotal);
 
                 //var buscarcodigoproducto = BuscarEnProductosCount(item.CodigoProducto);
                 //if (item.CodigoProducto==buscarcodigoproducto.CodigoProducto)
