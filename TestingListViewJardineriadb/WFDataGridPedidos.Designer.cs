@@ -47,6 +47,7 @@ namespace TestingListViewJardineriadb
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnModifcar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFiltro1.SuspendLayout();
             this.grpFiltro2.SuspendLayout();
@@ -70,6 +71,7 @@ namespace TestingListViewJardineriadb
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.Size = new System.Drawing.Size(896, 310);
             this.dgvProductos.TabIndex = 4;
+            this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
             // 
             // colproducto
             // 
@@ -195,17 +197,28 @@ namespace TestingListViewJardineriadb
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(830, 476);
+            this.label2.Location = new System.Drawing.Point(863, 476);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "label2";
+            // 
+            // btnModifcar
+            // 
+            this.btnModifcar.Location = new System.Drawing.Point(725, 508);
+            this.btnModifcar.Name = "btnModifcar";
+            this.btnModifcar.Size = new System.Drawing.Size(75, 23);
+            this.btnModifcar.TabIndex = 8;
+            this.btnModifcar.Text = "Modificar";
+            this.btnModifcar.UseVisualStyleBackColor = true;
+            this.btnModifcar.Click += new System.EventHandler(this.btnModifcar_Click);
             // 
             // WFDataGridPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 534);
+            this.Controls.Add(this.btnModifcar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar);
@@ -215,6 +228,7 @@ namespace TestingListViewJardineriadb
             this.Controls.Add(this.grpFiltro1);
             this.Controls.Add(this.dgvProductos);
             this.Name = "WFDataGridPedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "WFDataGridPedidos";
             this.Load += new System.EventHandler(this.WFDataGridPedidos_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.WFDataGridPedidos_KeyDown);
@@ -249,5 +263,6 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.DataGridViewTextBoxColumn colimporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnModifcar;
     }
 }
