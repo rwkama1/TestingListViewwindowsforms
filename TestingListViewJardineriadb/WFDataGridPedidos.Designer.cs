@@ -29,7 +29,7 @@ namespace TestingListViewJardineriadb
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.colproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colenvase = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +49,12 @@ namespace TestingListViewJardineriadb
             this.label2 = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnModificarDatos = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFiltro1.SuspendLayout();
             this.grpFiltro2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProductos
@@ -96,9 +98,9 @@ namespace TestingListViewJardineriadb
             // 
             // colcant
             // 
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colcant.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colcant.DefaultCellStyle = dataGridViewCellStyle3;
             this.colcant.HeaderText = "Cantidad";
             this.colcant.Name = "colcant";
             // 
@@ -171,6 +173,7 @@ namespace TestingListViewJardineriadb
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Location = new System.Drawing.Point(305, 81);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(273, 63);
@@ -225,6 +228,14 @@ namespace TestingListViewJardineriadb
             this.btnModificarDatos.Text = "Modificar Datos";
             this.btnModificarDatos.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(38, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
             // WFDataGridPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +263,7 @@ namespace TestingListViewJardineriadb
             this.grpFiltro2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,5 +290,6 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnModificarDatos;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
