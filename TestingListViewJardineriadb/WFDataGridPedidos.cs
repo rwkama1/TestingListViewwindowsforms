@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TestingListViewJardineriadb
@@ -20,11 +18,11 @@ namespace TestingListViewJardineriadb
             MostarProductosEngrilla();
         }
 
-        public double CalcularImporte { get; set; }
+      
         List<DTDetallePedidoEnvase> listaDetallePedidos { get; set; }
         private void WFDataGridPedidos_Load(object sender, EventArgs e)
         {
-
+           
             dgvProductos.CellEnter += new DataGridViewCellEventHandler(dgvProductos_CellEnter);
 
 
@@ -61,13 +59,17 @@ namespace TestingListViewJardineriadb
             for (int i = 0; i < list.Count; i++)
             {
                 DataGridViewRow row = list[i];
-                if (row.Cells[colcant.Index].Value != null)
+
+
+                if (row.Cells[colcant.Index].FormattedValue.ToString() != "")
                 {
+                    var cantidad = Convert.ToInt32(row.Cells[colcant.Index].Value);
                     var producto = row.Cells[colproducto.Index].Value.ToString();
                     var envase = row.Cells[colenvase.Index].Value.ToString();
                     var codigo = Convert.ToInt32(row.Cells[colcodigo.Index].Value);
                     var precio = Convert.ToDouble(row.Cells[colprecio.Index].Value);
-                    var cantidad = Convert.ToInt32(row.Cells[colcant.Index].Value);
+
+
                     var importe = Convert.ToDouble(row.Cells[colimporte.Index].Value);
                     DTDetallePedidoEnvase dTDetallePedidoEnvase = new DTDetallePedidoEnvase()
                     { Nombre = producto, Envase = envase, Codigo = codigo, Precio = precio, Cantidad = cantidad, Importe = importe };
@@ -187,10 +189,6 @@ namespace TestingListViewJardineriadb
 
         }
 
-        private void btnModifcar_Click(object sender, EventArgs e)
-        {
-            MostrarDetallesConProductos();
-        }
 
         private void MostrarDetallesConProductos()
         {
@@ -198,29 +196,32 @@ namespace TestingListViewJardineriadb
             dgvProductos.Rows.Clear();
             List<DTDetallePedidoEnvase> list = listaDetallePedidos;
             List<DTProductoEnvase> productos = CargarProductoEnvaseSistema();
-
-            for (int i = 0; i < list.Count; i++)
+            if (list.Count != 0)
             {
-                DTDetallePedidoEnvase prod = list[i];
-                List<string> rowgridview = new List<string>()
+                for (int i = 0; i < list.Count; i++)
+                {
+                    DTDetallePedidoEnvase prod = list[i];
+                    List<string> rowgridview = new List<string>()
                 { prod.Nombre.ToString(), prod.Envase.ToString(),
                   prod.Codigo.ToString(),prod.Cantidad.ToString(),
                    prod.Precio.ToString(),prod.Importe.ToString() };
 
-                dgvProductos.Rows.Add(rowgridview.ToArray());
-            }
-
-            for (int i = 0; i < productos.Count; i++)
-            {
-                DTProductoEnvase prod = productos[i];
-                if(!dgvProductos.Rows.Cast<DataGridViewRow>().Any(row => Convert.ToInt32(row.Cells[colcodigo.Index].Value)==prod.Codigo))
-                {
-                    List<string> rowgridview = new List<string>() { prod.Nombre.ToString(), prod.Envase.ToString(), prod.Codigo.ToString() };
                     dgvProductos.Rows.Add(rowgridview.ToArray());
                 }
-               
-               
 
+                for (int i = 0; i < productos.Count; i++)
+                {
+                    DTProductoEnvase prod = productos[i];
+                    if (!dgvProductos.Rows.Cast<DataGridViewRow>().Any(row => Convert.ToInt32(row.Cells[colcodigo.Index].Value) == prod.Codigo))
+                    {
+                        List<string> rowgridview = new List<string>() { prod.Nombre.ToString(), prod.Envase.ToString(), prod.Codigo.ToString() };
+                        dgvProductos.Rows.Add(rowgridview.ToArray());
+                    }
+
+
+
+
+                }
 
             }
 
@@ -239,19 +240,19 @@ namespace TestingListViewJardineriadb
                     {
                         if (Convert.ToInt32(e.FormattedValue.ToString()) == 0)
                         {
-                           
+
                             MessageBox.Show("El Codigo no puede ser 0");
                             e.Cancel = true;
 
 
                         }
                     }
-                    catch 
+                    catch
                     {
 
-                        
+
                     }
-                   
+
 
 
 
@@ -260,7 +261,22 @@ namespace TestingListViewJardineriadb
             }
         }
 
+        private void ModificarDetallePedido()
+        {
+            CargarProductosGrilla();
+            AgregarDatos();
+        }
 
+        private void btnModificarDatos_Click(object sender, EventArgs e)
+        {
+            ModificarDetallePedido();
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            MostrarDetallesConProductos();
+
+        }
     }
 }
 
