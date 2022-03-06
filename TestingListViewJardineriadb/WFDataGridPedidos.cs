@@ -10,11 +10,14 @@ namespace TestingListViewJardineriadb
 {
     public partial class WFDataGridPedidos : Form
     {
+       
         public WFDataGridPedidos()
         {
             InitializeComponent();
             textBox1.Focus();
             KeyPreview = true;
+            dgvProductos.MultiSelect = false;
+            CancelButton = btnCancel;
             MostarProductosEngrilla();
         }
 
@@ -44,9 +47,9 @@ namespace TestingListViewJardineriadb
         {
             CargarProductosGrilla();
             StringBuilder mensajeproductos = new StringBuilder();
-            foreach (var item in listaDetallePedidos)
+            for (int i = 0; i < listaDetallePedidos.Count; i++)
             {
-
+                DTDetallePedidoEnvase item = listaDetallePedidos[i];
                 mensajeproductos.Append(item.Nombre.ToString()).AppendLine();
             }
             MessageBox.Show(mensajeproductos.ToString());
@@ -60,11 +63,13 @@ namespace TestingListViewJardineriadb
             {
                 DataGridViewRow row = list[i];
 
-
-                if (row.Cells[colcant.Index].FormattedValue.ToString() != "")
+                var producto = Convert.ToString(row.Cells[colproducto.Index].Value);
+                var cantidad = Convert.ToInt32(row.Cells[colcant.Index].Value);
+                if (row.Cells[colcant.Index].FormattedValue.ToString() != ""&&producto!=""&&cantidad!=0)
                 {
-                    var cantidad = Convert.ToInt32(row.Cells[colcant.Index].Value);
-                    var producto = row.Cells[colproducto.Index].Value.ToString();
+
+                   // var producto = row.Cells[colproducto.Index].Value.ToString();
+                   
                     var envase = row.Cells[colenvase.Index].Value.ToString();
                     var codigo = Convert.ToInt32(row.Cells[colcodigo.Index].Value);
                     var precio = Convert.ToDouble(row.Cells[colprecio.Index].Value);
@@ -141,11 +146,17 @@ namespace TestingListViewJardineriadb
 
         private void dgvProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
+            var valornombreproducto = Convert.ToString(dgvProductos.CurrentRow.Cells[colproducto.Index].Value);
 
             if (dgvProductos.CurrentRow.Cells[e.ColumnIndex].ReadOnly)
             {
                 SendKeys.Send("{tab}");
             }
+            if (dgvProductos.Rows[dgvProductos.Rows.Count-1].IsNewRow)
+            {
+                dgvProductos.Rows[dgvProductos.Rows.Count-1].Cells[colcodigo.Index].ReadOnly = false;
+            }
+              
         }
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
@@ -231,34 +242,34 @@ namespace TestingListViewJardineriadb
         private void dgvProductos_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
 
-            if (dgvProductos.IsCurrentCellDirty)
-            {
-                if (e.ColumnIndex == colcant.Index)
-                {
+            //if (dgvProductos.IsCurrentCellDirty)
+            //{
+            //    if (e.ColumnIndex == colcant.Index)
+            //    {
 
-                    try
-                    {
-                        if (Convert.ToInt32(e.FormattedValue.ToString()) == 0)
-                        {
+            //        try
+            //        {
+            //            if (Convert.ToInt32(e.FormattedValue.ToString()) == 0)
+            //            {
 
-                            MessageBox.Show("El Codigo no puede ser 0");
-                            e.Cancel = true;
-
-
-                        }
-                    }
-                    catch
-                    {
+            //                MessageBox.Show("El Codigo no puede ser 0");
+            //                e.Cancel = true;
 
 
-                    }
+            //            }
+            //        }
+            //        catch
+            //        {
+
+
+            //        }
 
 
 
 
-                }
+            //    }
 
-            }
+            //}
         }
 
         private void ModificarDetallePedido()
@@ -276,6 +287,21 @@ namespace TestingListViewJardineriadb
         {
             MostrarDetallesConProductos();
 
+        }
+
+        private void btnCantidaddefilas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(CantidadFilasGridView().ToString());
+        }
+        private int CantidadFilasGridView()
+        {
+            return dgvProductos.Rows.Count;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            AutoValidate = AutoValidate.Disable;
+            this.Close();
         }
     }
 }

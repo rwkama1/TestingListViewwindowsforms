@@ -50,6 +50,8 @@ namespace TestingListViewJardineriadb
             this.label2 = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.btnModificarDatos = new System.Windows.Forms.Button();
+            this.btnCantidaddefilas = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpFiltro1.SuspendLayout();
             this.grpFiltro2.SuspendLayout();
@@ -238,11 +240,33 @@ namespace TestingListViewJardineriadb
             this.btnModificarDatos.UseVisualStyleBackColor = true;
             this.btnModificarDatos.Click += new System.EventHandler(this.btnModificarDatos_Click);
             // 
+            // btnCantidaddefilas
+            // 
+            this.btnCantidaddefilas.Location = new System.Drawing.Point(471, 508);
+            this.btnCantidaddefilas.Name = "btnCantidaddefilas";
+            this.btnCantidaddefilas.Size = new System.Drawing.Size(135, 23);
+            this.btnCantidaddefilas.TabIndex = 8;
+            this.btnCantidaddefilas.Text = "Cantidad Registros";
+            this.btnCantidaddefilas.UseVisualStyleBackColor = true;
+            this.btnCantidaddefilas.Click += new System.EventHandler(this.btnCantidaddefilas_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(377, 508);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // WFDataGridPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 534);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnCantidaddefilas);
             this.Controls.Add(this.btnModificarDatos);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.label2);
@@ -293,5 +317,7 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.DataGridViewTextBoxColumn colcant;
         private System.Windows.Forms.DataGridViewTextBoxColumn colprecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colimporte;
+        private System.Windows.Forms.Button btnCantidaddefilas;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
