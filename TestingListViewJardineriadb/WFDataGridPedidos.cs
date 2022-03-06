@@ -10,7 +10,8 @@ namespace TestingListViewJardineriadb
 {
     public partial class WFDataGridPedidos : Form
     {
-         List<DTProductoEnvase> listaprod { get; set; }
+        List<DTProductoEnvase> listaprod { get; set; }
+        int ContadorDeNuevasFilasAgregadas { get; set; }
         //public List<DTProductoEnvase> listap
         public WFDataGridPedidos()
         {
@@ -22,11 +23,11 @@ namespace TestingListViewJardineriadb
             MostarProductosEngrilla();
         }
 
-      
+
         List<DTDetallePedidoEnvase> listaDetallePedidos { get; set; }
         private void WFDataGridPedidos_Load(object sender, EventArgs e)
         {
-           
+            ContadorDeNuevasFilasAgregadas = 0;
             dgvProductos.CellEnter += new DataGridViewCellEventHandler(dgvProductos_CellEnter);
 
 
@@ -54,6 +55,7 @@ namespace TestingListViewJardineriadb
                 mensajeproductos.Append(item.Nombre.ToString()).AppendLine();
             }
             MessageBox.Show(mensajeproductos.ToString());
+            Limpiar();
         }
         private void CargarProductosGrilla()
         {
@@ -66,11 +68,11 @@ namespace TestingListViewJardineriadb
 
                 var producto = Convert.ToString(row.Cells[colproducto.Index].Value);
                 var cantidad = Convert.ToInt32(row.Cells[colcant.Index].Value);
-                if (row.Cells[colcant.Index].FormattedValue.ToString() != ""&&producto!=""&&cantidad!=0)
+                if (row.Cells[colcant.Index].FormattedValue.ToString() != "" && producto != "" && cantidad != 0)
                 {
 
-                   // var producto = row.Cells[colproducto.Index].Value.ToString();
-                   
+                    // var producto = row.Cells[colproducto.Index].Value.ToString();
+
                     var envase = row.Cells[colenvase.Index].Value.ToString();
                     var codigo = Convert.ToInt32(row.Cells[colcodigo.Index].Value);
                     var precio = Convert.ToDouble(row.Cells[colprecio.Index].Value);
@@ -154,11 +156,11 @@ namespace TestingListViewJardineriadb
             {
                 SendKeys.Send("{tab}");
             }
-            if (dgvProductos.Rows[dgvProductos.Rows.Count-1].IsNewRow)
+            if (dgvProductos.Rows[dgvProductos.Rows.Count - 1].IsNewRow)
             {
-                dgvProductos.Rows[dgvProductos.Rows.Count-1].Cells[colcodigo.Index].ReadOnly = false;
+                dgvProductos.Rows[dgvProductos.Rows.Count - 1].Cells[colcodigo.Index].ReadOnly = false;
             }
-              
+
         }
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
@@ -243,14 +245,24 @@ namespace TestingListViewJardineriadb
 
         private void dgvProductos_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if(e.ColumnIndex==colcodigo.Index&& dgvProductos.Rows[dgvProductos.Rows.Count-2].Cells[colcodigo.Index].Selected)
+
+            if (e.ColumnIndex == colcodigo.Index && dgvProductos.Rows[dgvProductos.Rows.Count - 1].IsNewRow)
             {
-                var producto=BuscarProducto(Convert.ToInt32(dgvProductos.CurrentRow.Cells[colcodigo.Index].Value));
-                if(producto!=null)
+             
+                var producto = BuscarProducto(Convert.ToInt32(dgvProductos.CurrentRow.Cells[colcodigo.Index].Value));
+                if (producto != null)
                 {
                     dgvProductos.CurrentRow.Cells[colproducto.Index].Value = producto.Nombre;
                     dgvProductos.CurrentRow.Cells[colenvase.Index].Value = producto.Envase;
+                    ContadorDeNuevasFilasAgregadas++;
                 }
+                else
+                {
+                    dgvProductos.CurrentRow.Cells[colproducto.Index].Value = null;
+                    dgvProductos.CurrentRow.Cells[colenvase.Index].Value = null;
+                }
+              
+
             }
             //if (dgvProductos.IsCurrentCellDirty)
             //{
@@ -298,20 +310,20 @@ namespace TestingListViewJardineriadb
             MostrarDetallesConProductos();
 
         }
-        DTProductoEnvase  BuscarProducto(int codigo)
+        DTProductoEnvase BuscarProducto(int codigo)
         {
             DTProductoEnvase producto = null;
             List<DTProductoEnvase> list = listaprod;
             for (int i = 0; i < list.Count; i++)
             {
                 DTProductoEnvase item = list[i];
-                if (item.Codigo==codigo)
+                if (item.Codigo == codigo)
                 {
-                    producto=item;
+                    producto = item;
                 }
             }
             return producto;
-         // return CargarProductoEnvaseSistema().Single(x => x.Codigo == codigo);
+            // return CargarProductoEnvaseSistema().Single(x => x.Codigo == codigo);
         }
 
         private void btnCantidaddefilas_Click(object sender, EventArgs e)
@@ -328,6 +340,29 @@ namespace TestingListViewJardineriadb
             AutoValidate = AutoValidate.Disable;
             this.Close();
         }
+        void Limpiar()
+        {
+            dgvProductos.Rows.Clear();
+            MostarProductosEngrilla();
+            //var list = dgvProductos.Rows;
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    DataGridViewRow row = list[i];
+              
+            //    row.Cells[colprecio.Index].Value = null;
+            //    row.Cells[colcant.Index].Value = null;
+            //    dgvProductos
+            //    //for (int x = 0; x < ContadorDeNuevasFilasAgregadas; x++)
+            //    //{
+            //        //var cantidaddefilasenos1 = dgvProductos.Rows.Count-2;
+            //        //dgvProductos.Rows[cantidaddefilasenos1].Cells[colproducto.Index].Value=null;
+            //        //dgvProductos.Rows[cantidaddefilasenos1].Cells[colenvase.Index].Value = null;
+            //    //}
+
+
+            //}
+        }
     }
-}
+    }
+
 
