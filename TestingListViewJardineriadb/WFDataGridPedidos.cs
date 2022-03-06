@@ -10,7 +10,8 @@ namespace TestingListViewJardineriadb
 {
     public partial class WFDataGridPedidos : Form
     {
-       
+         List<DTProductoEnvase> listaprod { get; set; }
+        //public List<DTProductoEnvase> listap
         public WFDataGridPedidos()
         {
             InitializeComponent();
@@ -102,6 +103,7 @@ namespace TestingListViewJardineriadb
                     listaa.Add(new DTProductoEnvase($"Producto{i + 1}", $"Envase{i + 1}", i + 1));
                 }
             }
+            listaprod = listaa;
             return listaa.OrderBy(x => x.Codigo).ToList();
         }
 
@@ -241,7 +243,15 @@ namespace TestingListViewJardineriadb
 
         private void dgvProductos_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-
+            if(e.ColumnIndex==colcodigo.Index&& dgvProductos.Rows[dgvProductos.Rows.Count-2].Cells[colcodigo.Index].Selected)
+            {
+                var producto=BuscarProducto(Convert.ToInt32(dgvProductos.CurrentRow.Cells[colcodigo.Index].Value));
+                if(producto!=null)
+                {
+                    dgvProductos.CurrentRow.Cells[colproducto.Index].Value = producto.Nombre;
+                    dgvProductos.CurrentRow.Cells[colenvase.Index].Value = producto.Envase;
+                }
+            }
             //if (dgvProductos.IsCurrentCellDirty)
             //{
             //    if (e.ColumnIndex == colcant.Index)
@@ -287,6 +297,21 @@ namespace TestingListViewJardineriadb
         {
             MostrarDetallesConProductos();
 
+        }
+        DTProductoEnvase  BuscarProducto(int codigo)
+        {
+            DTProductoEnvase producto = null;
+            List<DTProductoEnvase> list = listaprod;
+            for (int i = 0; i < list.Count; i++)
+            {
+                DTProductoEnvase item = list[i];
+                if (item.Codigo==codigo)
+                {
+                    producto=item;
+                }
+            }
+            return producto;
+         // return CargarProductoEnvaseSistema().Single(x => x.Codigo == codigo);
         }
 
         private void btnCantidaddefilas_Click(object sender, EventArgs e)
