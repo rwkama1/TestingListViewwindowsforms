@@ -149,6 +149,7 @@ namespace TestingListViewJardineriadb
                         pedido.CodigoProducto = codigoproducto;
                         pedido.CountProducto = cantidad;
                         listp.Add(pedido);
+                        
                     }
 
                 }

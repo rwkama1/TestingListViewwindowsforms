@@ -16,7 +16,7 @@ namespace TestingListViewJardineriadb
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WFDataGridPedidos());
+            Application.Run(new WFListarPedidos());
         }
     }
 }

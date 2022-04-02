@@ -15,10 +15,13 @@ namespace TestingListViewJardineriadb
 {
     public partial class WFListarPedidos : Form
     {
+       
         public WFListarPedidos()
         {
             InitializeComponent();
         }
+
+
 
         private void WFListarPedidos_Load(object sender, EventArgs e)
         {
@@ -27,6 +30,7 @@ namespace TestingListViewJardineriadb
             //lstPedidos.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             btnListar.Focus();
             lstPedidos.MultiSelect = false;
+        
            
             
           
@@ -213,13 +217,13 @@ namespace TestingListViewJardineriadb
         {
             if (lstPedidos.Items.Count > 0)
             {
-                Document doc = new Document();
-                PdfWriter.GetInstance(doc, new FileStream("C:/Users/Waldemar/Desktop/Cosas Programacion/asd.pdf", FileMode.Create));
-                doc.Open();
-                Paragraph p1 = new Paragraph("hello world");
-                doc.Add(p1);
-                doc.Close();
-                MessageBox.Show("PDF file created");
+                //Document doc = new Document();
+                //PdfWriter.GetInstance(doc, new FileStream("C:/Users/Waldemar/Desktop/Cosas Programacion/asd.pdf", FileMode.Create));
+                //doc.Open();
+                //Paragraph p1 = new Paragraph("hello world");
+                //doc.Add(p1);
+                //doc.Close();
+                //MessageBox.Show("PDF file created");
                 //SaveFileDialog sfd = new SaveFileDialog();
                 //sfd.Filter = "PDF (*.pdf)|*.pdf";
                 //sfd.FileName = "Output.pdf";
@@ -350,6 +354,21 @@ namespace TestingListViewJardineriadb
                
 
             }
+        }
+
+        private void OrderCantidadListview()
+        {
+        
+        }
+
+        private void lstPedidos_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
+        {
+            if (e.Item.SubItems[2].Text=="11679")
+            {
+               // MessageBox.Show(e.Item.SubItems[1].Text.ToString());
+                e.Item.ToolTipText = "asd";
+            }
+           
         }
     }
 }

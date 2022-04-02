@@ -14,21 +14,34 @@ namespace TestingListViewJardineriadb.GroupListView
         internal static void GrupoPorCodigoProducto(ListView lst,ColumnHeader colpedido,ColumnHeader colproducto, ColumnHeader colcantidad, ColumnHeader colnumerolinea,ColumnHeader colprice )
         {
             var pedidosproductoscount = PPedido.listarPorProductoCount();
+            lst.ShowItemToolTips = true;
+         
             foreach (var item in pedidosproductoscount)
             {
 
                 List<DTPedido> buscaporproducto = null;
+              
                 buscaporproducto = PPedido.buscarPorProducto(item.CodigoProducto);
                     foreach (var p in buscaporproducto)
                     {
-                    var listViewItem = new ListViewItem("");
-            
-                    listViewItem.SubItems.Add(p.CodigoPedido.ToString());
+                    var listViewItem = new ListViewItem();
+                   
+
+                   listViewItem.SubItems.Add(p.CodigoPedido.ToString());
+                   
                     listViewItem.SubItems.Add(p.CodigoProducto.ToString());
+                  
                     listViewItem.SubItems.Add(p.Cantidad.ToString());
+                  
                     listViewItem.SubItems.Add(p.PrecioUnidad.ToString());
+                   
                     listViewItem.SubItems.Add(p.NumeroLinea.ToString());
+
+                    //listViewItem.ToolTipText = "asd";
                     lst.Items.Add(listViewItem);
+                    
+
+
                 }
                
                 //Font fontstyle2 = new Font(lst.Font, FontStyle.Bold);
