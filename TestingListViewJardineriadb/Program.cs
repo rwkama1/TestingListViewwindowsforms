@@ -16,7 +16,7 @@ namespace TestingListViewJardineriadb
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WFListarPedidos());
+            Application.Run(new Suma10TextBox());
         }
     }
 }

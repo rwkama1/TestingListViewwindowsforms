@@ -13,3 +13,4 @@ C:\Users\Waldemar\Desktop\Cosas Programacion\windowsform\TestingListViewJardiner
 C:\Users\Waldemar\Desktop\Cosas Programacion\windowsform\TestingListViewJardineriadb\TestingListViewJardineriadb\bin\Debug\MySql.Data.xml
 C:\Users\Waldemar\Desktop\Cosas Programacion\windowsform\TestingListViewJardineriadb\TestingListViewJardineriadb\obj\Debug\TestingListViewJardineriadb.csproj.CopyComplete
 C:\Users\Waldemar\Desktop\Cosas Programacion\windowsform\TestingListViewJardineriadb\TestingListViewJardineriadb\obj\Debug\TestingListViewJardineriadb.WFDataGridPedidos.resources
+C:\Users\Waldemar\Desktop\Cosas Programacion\windowsform\TestingListViewJardineriadb\TestingListViewJardineriadb\obj\Debug\TestingListViewJardineriadb.Suma10TextBox.resources
