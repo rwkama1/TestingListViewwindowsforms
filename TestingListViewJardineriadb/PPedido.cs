@@ -9,7 +9,7 @@ namespace TestingListViewJardineriadb
 {
     internal class PPedido
     {
-       internal static List<DTPedido> listarDetallePedidos()
+           internal static List<DTPedido> listarDetallePedidos()
         {
             string consulta = "SELECT * FROM detalle_pedido;";
             MySqlConnection cnn = Conexion.conexion();

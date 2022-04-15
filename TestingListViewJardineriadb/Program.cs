@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestingListViewJardineriadb.Vencimientos;
 
 namespace TestingListViewJardineriadb
 {
@@ -16,7 +17,7 @@ namespace TestingListViewJardineriadb
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Suma10TextBox());
+            Application.Run(new FormVencimientos());
         }
     }
 }

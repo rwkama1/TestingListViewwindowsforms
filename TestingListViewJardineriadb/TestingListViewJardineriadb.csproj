@@ -51,10 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="FormSuma10TextBox.cs">
+    <Compile Include="Vencimientos\FormSuma10TextBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSuma10TextBox.Designer.cs">
+    <Compile Include="Vencimientos\FormSuma10TextBox.Designer.cs">
       <DependentUpon>FormSuma10TextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupListView.cs" />
@@ -62,6 +62,13 @@
     <Compile Include="PPedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vencimientos\FormVencimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vencimientos\FormVencimientos.Designer.cs">
+      <DependentUpon>FormVencimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vencimientos\ManejoDateTextBox.cs" />
     <Compile Include="WFDataGridPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +81,7 @@
     <Compile Include="WFListarPedidos.Designer.cs">
       <DependentUpon>WFListarPedidos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormSuma10TextBox.resx">
+    <EmbeddedResource Include="Vencimientos\FormSuma10TextBox.resx">
       <DependentUpon>FormSuma10TextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -86,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vencimientos\FormVencimientos.resx">
+      <DependentUpon>FormVencimientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WFDataGridPedidos.resx">
       <DependentUpon>WFDataGridPedidos.cs</DependentUpon>
     </EmbeddedResource>

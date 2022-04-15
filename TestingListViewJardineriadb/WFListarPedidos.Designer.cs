@@ -36,11 +36,11 @@ namespace TestingListViewJardineriadb
             this.cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.preciounidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numerolinea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.countproduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnListar = new System.Windows.Forms.Button();
             this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.countproduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cntMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,11 @@ namespace TestingListViewJardineriadb
             this.numerolinea.Text = "Numero Linea";
             this.numerolinea.Width = 100;
             // 
+            // countproduct
+            // 
+            this.countproduct.Text = "Count Producto";
+            this.countproduct.Width = 90;
+            // 
             // btnListar
             // 
             this.btnListar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,16 +126,12 @@ namespace TestingListViewJardineriadb
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 417);
+            this.button1.Location = new System.Drawing.Point(701, 417);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // countproduct
-            // 
-            this.countproduct.Text = "Count Producto";
             // 
             // WFListarPedidos
             // 
