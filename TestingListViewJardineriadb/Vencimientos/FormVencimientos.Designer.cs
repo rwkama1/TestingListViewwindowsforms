@@ -29,23 +29,13 @@ namespace TestingListViewJardineriadb.Vencimientos
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpVenc = new System.Windows.Forms.GroupBox();
             this.btnVenc = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // grpVenc
-            // 
-            this.grpVenc.ForeColor = System.Drawing.Color.Navy;
-            this.grpVenc.Location = new System.Drawing.Point(12, 21);
-            this.grpVenc.Name = "grpVenc";
-            this.grpVenc.Size = new System.Drawing.Size(137, 49);
-            this.grpVenc.TabIndex = 1;
-            this.grpVenc.TabStop = false;
-            this.grpVenc.Text = "Cantidad Vencimientos";
             // 
             // btnVenc
             // 
-            this.btnVenc.Location = new System.Drawing.Point(12, 93);
+            this.btnVenc.Location = new System.Drawing.Point(12, 59);
             this.btnVenc.Name = "btnVenc";
             this.btnVenc.Size = new System.Drawing.Size(102, 23);
             this.btnVenc.TabIndex = 22;
@@ -53,13 +43,23 @@ namespace TestingListViewJardineriadb.Vencimientos
             this.btnVenc.UseVisualStyleBackColor = true;
             this.btnVenc.Click += new System.EventHandler(this.btnVenc_Click);
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(120, 59);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 23;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // FormVencimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(198, 149);
+            this.ClientSize = new System.Drawing.Size(216, 149);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnVenc);
-            this.Controls.Add(this.grpVenc);
             this.Name = "FormVencimientos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Vencimientos";
@@ -69,8 +69,7 @@ namespace TestingListViewJardineriadb.Vencimientos
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grpVenc;
         private System.Windows.Forms.Button btnVenc;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

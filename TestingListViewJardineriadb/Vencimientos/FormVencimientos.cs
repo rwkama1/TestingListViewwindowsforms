@@ -20,14 +20,31 @@ namespace TestingListViewJardineriadb.Vencimientos
 
         private void btnVenc_Click(object sender, EventArgs e)
         {
-            FormSuma10TextBox frmsuma10textbox = new FormSuma10TextBox();
-            frmsuma10textbox.ShowDialog();
-            Porcentajes = frmsuma10textbox.Porcentajes;
+         
+                FormSuma10TextBox frmsuma10textbox = new FormSuma10TextBox();
+                frmsuma10textbox.ShowDialog();
+                Porcentajes = frmsuma10textbox.Porcentajes;
+           
+          
+           
+           
         }
 
         private void FormVencimientos_Load(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
 
         }
+
+        //private void btnAceptar_Click(object sender, EventArgs e)
+        //{
+        //   string mensaje=Porcentajes[0]
+
+        //}
+
     }
 }

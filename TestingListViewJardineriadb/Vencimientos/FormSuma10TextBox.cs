@@ -106,7 +106,7 @@ namespace TestingListViewJardineriadb
 
         private void FormSuma10TextBox_Load(object sender, EventArgs e)
         {
-        
+            Porcentajes = new int[10];
             CargarEventoTextBox();
             CargarEventosValidtaing();
             ManejoDateTextBox.TextBoxMinimo0Mayor100(obtenerTextBoxes);
@@ -396,14 +396,10 @@ namespace TestingListViewJardineriadb
         }
     
 
-        private void btnaceptar_Click(object sender, EventArgs e)
-        {
-            AgregarDatos();
-        }
 
         private void AgregarDatos()
         {
-            if (!SumaDa100)
+            if (SumaDa100)
             {
                 int enterocantvenc = Convert.ToInt32(txtingvenc.Text);
                 switch (enterocantvenc)
@@ -488,6 +484,7 @@ namespace TestingListViewJardineriadb
                         Porcentajes[9] = Convert.ToInt32(textBox10.Text);
                         break;
                 }
+                Close();
             }
             else
             {
@@ -520,8 +517,10 @@ namespace TestingListViewJardineriadb
             ManejoDateTextBox.SetearTextBoxVacios(obtenerTextBoxes);
             ManejoDateTextBox.LabelsImporteInvisible(obtenerLabelsimporte);
         }
-     
 
-
+        private void btnaceptar_Click_1(object sender, EventArgs e)
+        {
+            AgregarDatos();
+        }
     }
 }

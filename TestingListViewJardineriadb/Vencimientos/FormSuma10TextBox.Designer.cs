@@ -390,7 +390,7 @@ namespace TestingListViewJardineriadb
             this.btnaceptar.TabIndex = 2;
             this.btnaceptar.Text = "Aceptar";
             this.btnaceptar.UseVisualStyleBackColor = true;
-            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click_1);
             // 
             // btnCancelar
             // 
