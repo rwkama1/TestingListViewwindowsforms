@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestingListViewJardineriadb.ManejoArchivos;
 
 namespace TestingListViewJardineriadb
 {
@@ -250,6 +251,12 @@ namespace TestingListViewJardineriadb
                
 
             }
+        }
+
+        private void btnArchivos_Click(object sender, EventArgs e)
+        {
+            FrmManejoArchivos frmmanejoarchivos = new FrmManejoArchivos();
+            frmmanejoarchivos.ShowDialog();
         }
     }
 }

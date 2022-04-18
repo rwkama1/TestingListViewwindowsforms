@@ -36,11 +36,12 @@ namespace TestingListViewJardineriadb
             this.cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.preciounidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numerolinea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.countproduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnListar = new System.Windows.Forms.Button();
             this.cntMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.countproduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnArchivos = new System.Windows.Forms.Button();
             this.cntMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +95,10 @@ namespace TestingListViewJardineriadb
             this.numerolinea.Text = "Numero Linea";
             this.numerolinea.Width = 100;
             // 
+            // countproduct
+            // 
+            this.countproduct.Text = "Count Producto";
+            // 
             // btnListar
             // 
             this.btnListar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,9 +133,16 @@ namespace TestingListViewJardineriadb
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // countproduct
+            // btnArchivos
             // 
-            this.countproduct.Text = "Count Producto";
+            this.btnArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnArchivos.Location = new System.Drawing.Point(611, 28);
+            this.btnArchivos.Name = "btnArchivos";
+            this.btnArchivos.Size = new System.Drawing.Size(75, 23);
+            this.btnArchivos.TabIndex = 3;
+            this.btnArchivos.Text = "Archivos";
+            this.btnArchivos.UseVisualStyleBackColor = true;
+            this.btnArchivos.Click += new System.EventHandler(this.btnArchivos_Click);
             // 
             // WFListarPedidos
             // 
@@ -138,6 +150,7 @@ namespace TestingListViewJardineriadb
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 452);
             this.ContextMenuStrip = this.cntMenu;
+            this.Controls.Add(this.btnArchivos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.lstPedidos);
@@ -165,5 +178,6 @@ namespace TestingListViewJardineriadb
         private System.Windows.Forms.ToolStripMenuItem seleccionarPedidoToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColumnHeader countproduct;
+        private System.Windows.Forms.Button btnArchivos;
     }
 }

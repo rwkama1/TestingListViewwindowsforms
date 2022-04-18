@@ -53,6 +53,12 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="GroupListView.cs" />
     <Compile Include="DTPedido.cs" />
+    <Compile Include="ManejoArchivos\FrmManejoArchivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManejoArchivos\FrmManejoArchivos.Designer.cs">
+      <DependentUpon>FrmManejoArchivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PPedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +74,9 @@
     <Compile Include="WFListarPedidos.Designer.cs">
       <DependentUpon>WFListarPedidos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ManejoArchivos\FrmManejoArchivos.resx">
+      <DependentUpon>FrmManejoArchivos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
